@@ -18,6 +18,7 @@ async function search() {
         const output2 = codesCountry[countryIds[1]] ? `${codesCountry[countryIds[1]]} з ймовірністю:${probabilitys[1]}%;</br>` : ``;
         const output3 = codesCountry[countryIds[2]] ? `${codesCountry[countryIds[2]]} з ймовірністю:${probabilitys[2]}%</br>` : ``;
         
+        ourDiv.innerHTML = `Введене ім'я "${name}" має приналежність до країн:</br>${output1}${output2}${output3}`;
     } else {
         ourDiv.innerHTML = 'Запит не виконався';
     }
