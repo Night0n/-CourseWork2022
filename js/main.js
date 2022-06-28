@@ -5,7 +5,7 @@ const regexp = /[a-zA-Z]+/g;
 const name = prompt(`Введіть ім'я`, '');
 const flag = regexp.test(name)
 
-
+if (flag) {
 async function search() {
     let response = await fetch(`https://api.nationalize.io?name=${name}`);
     if (response.ok) {
@@ -27,3 +27,6 @@ async function search() {
     }
 }
 search();
+} else {
+    ourDiv.innerHTML = `Неправильно введено ім'я, оновіть браузер та введіть ім'я правильно(без символів/цифр, та обов'язково англійською)`;
+  }
