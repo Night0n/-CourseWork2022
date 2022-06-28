@@ -1,7 +1,10 @@
 'use strict'
 
 const ourDiv = document.getElementById('main');
+const regexp = /[a-zA-Z]+/g;
 const name = prompt(`Введіть ім'я`, '');
+const flag = regexp.test(name)
+
 
 async function search() {
     let response = await fetch(`https://api.nationalize.io?name=${name}`);
