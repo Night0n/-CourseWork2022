@@ -9,7 +9,10 @@ async function search() {
         let json = await response.json();
         const countryIds = [json.country[0].country_id, json.country[1].country_id, json.country[2].country_id];
         const probabilitys = [json.country[0].probability, json.country[1].probability, json.country[2].probability];
-              
+        
+        for(let i = 0; i < probabilitys.length; i++) {
+            probabilitys[i] = (probabilitys[i]*100).toFixed(1);
+          }              
     } else {
         ourDiv.innerHTML = 'Запит не виконався';
     }
